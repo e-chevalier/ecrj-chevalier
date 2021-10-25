@@ -10,7 +10,7 @@ const CardComponent = ({prodName, prodId, price, description}) => {
                 </div>
                 <div className="row h-100 g-0 pt-3">
                     <div className="col-6">
-                        <img id="img" className="card-img-top" src={"/assets/img/product/"+ prodId +".jpg"} alt="" />
+                        <img id="img" className="card-img-top" src={"/assets/img/product/"+prodId+".jpg"} alt={prodName} />
                     </div>
                     <div className="col-6">
                         <div className="card-body font-black">
@@ -24,10 +24,10 @@ const CardComponent = ({prodName, prodId, price, description}) => {
                     <div className="card-footer text-center">
                         <p>
                             <button className="btn btn-light text-dark" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                                data-bs-target={"#collapse-"+prodId}  aria-expanded="false" aria-controls={"#collapse-"+prodId}>
                                 Más información
                             </button>
-                            <div className="collapse" id="collapse-1">
+                            <div className="collapse" id={"collapse-"+prodId}>
                                 <div className="card-text px-4">
                                     {description}
                                 </div>
@@ -35,12 +35,12 @@ const CardComponent = ({prodName, prodId, price, description}) => {
                         </p>
 
                         <div className="d-flex flex-row justify-content-around align-items-center">
-                            <button id="takeoutButton-1" type="button"
+                            <button id={"takeoutButton-"+prodId} type="button"
                                 className="btn btn-outline-danger rounded-circle border-0 square-button">
                                 <i className="bi bi-patch-minus h2"></i>
                             </button>
-                            <div> <span id="prodQty-1" className="badge bg-light text-success fs-5"> 5</span> </div>
-                            <button id="addButton-1" type="button"
+                            <div> <span id={"prodQty-"+prodId} className="badge bg-light text-success fs-5"> 5</span> </div>
+                            <button id={"addButton-"+prodId} type="button"
                                 className="btn btn-outline-success rounded-circle border-0 square-button">
                                 <i className="bi bi-patch-plus h2"></i>
                             </button>
