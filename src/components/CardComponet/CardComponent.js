@@ -1,55 +1,57 @@
 import React from 'react'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Accordion from 'react-bootstrap/Accordion'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Button from 'react-bootstrap/Button'
 
-const CardComponent = ({prodName, prodId, price, description}) => {
+const CardComponent = ({prodName, prodId, price, description, qtySelected}) => {
 
     return (
-        <div className="col py-4 px-4 px-lg-2 py-lg-3">
-            <div className="card h-100 mx-2">
-                <div className="card-header text-center">
-                    <h5 className="card-title">{prodName}</h5>
-                </div>
-                <div className="row h-100 g-0 pt-3">
-                    <div className="col-6">
-                        <img id="img" className="card-img-top" src={"/assets/img/product/"+prodId+".jpg"} alt={prodName} />
-                    </div>
-                    <div className="col-6">
-                        <div className="card-body font-black">
-                            <p className="card-text">Precio por Kg</p>
+        <Col className="col py-4 px-4 px-lg-2 py-lg-3">
+            <Card className="h-100 mx-2">
+                <Card.Header className="text-center">
+                    <Card.Title>{prodName}</Card.Title>
+                </Card.Header>
+
+                <Row className="h-100 g-0 pt-3">
+                    <Col xs={6}>
+                     <img id="img" className="card-img-top" src={"/assets/img/product/"+prodId+".jpg"} alt={prodName} />
+                    </Col>
+                    <Col xs={6}>
+                        <Card.Body>
+                            <Card.Text>Precio por Kg</Card.Text>
                             <p className="fw-bold fs-4">${price}</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div className="row g-0">
-                    <div className="card-footer text-center">
-                        <p>
-                            <button className="btn btn-light text-dark" type="button" data-bs-toggle="collapse"
-                                data-bs-target={"#collapse-"+prodId}  aria-expanded="false" aria-controls={"#collapse-"+prodId}>
-                                Más información
-                            </button>
-                            <div className="collapse" id={"collapse-"+prodId}>
-                                <div className="card-text px-4">
+                        </Card.Body>
+                    </Col>
+                </Row>
+                <Row className="g-0">
+                    <Card.Footer className="text-center">
+                        <Accordion flush>
+                            <Accordion.Item eventKey="0">
+                                <Accordion.Header>Más información</Accordion.Header>
+                                <Accordion.Body>
                                     {description}
-                                </div>
-                            </div>
-                        </p>
-
-                        <div className="d-flex flex-row justify-content-around align-items-center">
-                            <button id={"takeoutButton-"+prodId} type="button"
-                                className="btn btn-outline-danger rounded-circle border-0 square-button">
+                                </Accordion.Body>
+                            </Accordion.Item>
+                        </Accordion>
+                        <ButtonGroup aria-label="ButtonGroupCard">
+                            <Button id={"takeoutButton-"+prodId} variant="outline-danger" className="rounded-circle border-0">
                                 <i className="bi bi-patch-minus h2"></i>
-                            </button>
-                            <div> <span id={"prodQty-"+prodId} className="badge bg-light text-success fs-5"> 5</span> </div>
-                            <button id={"addButton-"+prodId} type="button"
-                                className="btn btn-outline-success rounded-circle border-0 square-button">
+                            </Button>
+                            <Button variant="light" type="null">
+                                <span id={"prodQty-"+prodId} className="badge bg-light text-success fs-5">{qtySelected} Kg</span>
+                            </Button>
+                            <Button id={"addButton-"+prodId} variant="outline-success" className="rounded-circle border-0">
                                 <i className="bi bi-patch-plus h2"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                            </Button>
+                        </ButtonGroup>
+                    </Card.Footer>
+                </Row>
 
-            </div>
-        </div>
+            </Card>
+        </Col>
 
     )
 }

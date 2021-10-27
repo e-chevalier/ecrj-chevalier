@@ -1,15 +1,14 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button'
 
 const CartWidget = ({ qtyOnCart }) => {
     return (
 
-        <a id="Cart" className="btn btn-light position-relative" href="#" role="button" aria-controls="offcanvasCart">
-            <span>
-                <i className="bi bi-cart h2"></i>
-                <span id="cartCounter"
+        <Button variant="outline-primary" className="position-relative">
+            <i className="bi bi-cart h3"></i>
+            <span id="cartCounter"
                     className="position-absolute top-0 start-100 translate-middle badge bg-success">{qtyOnCart}</span>
-            </span>
-        </a>
+        </Button>
     )
 }
 
