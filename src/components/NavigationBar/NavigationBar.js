@@ -1,66 +1,49 @@
 import logo from "../../logo.svg";
 import "../../App.css";
 import CartWidget from "../CartWidget/CartWidget";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 
 const NavigationBar = () => {
   return (
     <header>
-      <div className="container-fluid p-0">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-              <img src={logo} alt="Mi Logo" alt="" width="60" height="60" />
-            </a>
-            <div className="navbar-text d-flex justify-content-between text-right order-lg-1 px-md-4">
+      <Container fluid>
+        <Navbar bg="light" expand="lg">
+        
+          <Container fluid>
+            <Navbar.Brand href="#">
+              <img src={logo} alt="Mi Logo" width="60" height="60" />
+            </Navbar.Brand>
+            <Navbar.Text className="d-flex justify-content-between text-right order-lg-1 px-md-4">
               <CartWidget qtyOnCart="9" />
-              <button className="navbar-toggler border-0 mx-3" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-            </div>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul id="navbarNavContent" className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="#">
-                    Carnes
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Verduras
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Lacteos
-                  </a>
-                </li>
-                <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Frutas
-                  </a>
-                  <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li>
-                      <a className="dropdown-item" href="#"> Manzana </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#"> Pera </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#"> Melón </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+              <Navbar.Toggle className="border-0 mx-3" aria-controls="navbarScroll" />
+            </Navbar.Text>
+
+            <Navbar.Collapse id="navbarScroll">
+              <Nav id="navbarNavContent" className="me-auto mb-2 mb-lg-0" style={{ maxHeight: '300px' }}  >
+                <Nav.Link href="#action1">Carnes</Nav.Link>
+                <Nav.Link href="#action2">Verduras</Nav.Link>
+                <Nav.Link href="#action3">Lacteos</Nav.Link>
+                <NavDropdown title="Frutas" id="navbarScrollingDropdown">
+                  <NavDropdown.Item href="#action4">Manzana</NavDropdown.Item>
+                  <NavDropdown.Item href="#action5">Pera</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action6">
+                    Melón
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
 
               <div className="d-flex flex-row align-items-center">
                 <div id="loginContainer"></div>
               </div>
-            </div>
-          </div>
-        </nav>
-      </div>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </Container>
     </header>
   );
 };

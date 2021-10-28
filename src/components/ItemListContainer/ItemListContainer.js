@@ -1,4 +1,5 @@
 import React from 'react'
+import Container from 'react-bootstrap/Container';
 import CardComponent from '../CardComponet/CardComponent'
 
 const ItemListContainer = () => {
@@ -21,7 +22,7 @@ const ItemListContainer = () => {
     return (
 
         <div>
-            <div id="cards" class="container py-5 my-5">
+            <Container id="cards" className="py-5 my-5">
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
                     <CardComponent prodName="Naranja" prodId="fruit00001" price="250" description={description1} qtySelected="2" />
                     <CardComponent prodName="Manzana" prodId="fruit00002" price="350" description={description2} qtySelected="0"/>
@@ -40,7 +41,7 @@ const ItemListContainer = () => {
                     <CardComponent prodName="Maní Pelado Salado" prodId="nuts00003" price="490" description={description11} qtySelected="0"/>
                     <CardComponent prodName="Canela" prodId="spices00001" price="98" description={description12} qtySelected="0"/>
                 </div >
-            </div>
+            </Container>
             
         </div>
     )
