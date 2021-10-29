@@ -1,12 +1,13 @@
 import React from 'react'
+
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Accordion from 'react-bootstrap/Accordion'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import Button from 'react-bootstrap/Button'
 
-const CardComponent = ({prodName, prodId, price, description, qtySelected}) => {
+import ItemCount from '../ItemCount/ItemCount'
+
+const CardComponent = ({prodName, prodId, price, description}) => {
 
     return (
         <Col className="col py-4 px-4 px-lg-2 py-lg-3">
@@ -36,17 +37,7 @@ const CardComponent = ({prodName, prodId, price, description, qtySelected}) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <ButtonGroup aria-label="ButtonGroupCard">
-                            <Button id={"takeoutButton-"+prodId} variant="outline-danger" className="rounded-circle border-0">
-                                <i className="bi bi-patch-minus h2"></i>
-                            </Button>
-                            <Button variant="light" type="null">
-                                <span id={"prodQty-"+prodId} className="badge bg-light text-success fs-5">{qtySelected} Kg</span>
-                            </Button>
-                            <Button id={"addButton-"+prodId} variant="outline-success" className="rounded-circle border-0">
-                                <i className="bi bi-patch-plus h2"></i>
-                            </Button>
-                        </ButtonGroup>
+                        <ItemCount prodId={prodId} />
                     </Card.Footer>
                 </Row>
 

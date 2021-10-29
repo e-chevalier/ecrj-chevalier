@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
-import CardComponent from '../CardComponet/CardComponent'
+import CardComponent from '../CardComponent/CardComponent'
 
 const ItemListContainer = () => {
 
@@ -24,22 +24,22 @@ const ItemListContainer = () => {
         <div>
             <Container id="cards" className="py-5 my-5">
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
-                    <CardComponent prodName="Naranja" prodId="fruit00001" price="250" description={description1} qtySelected="2" />
-                    <CardComponent prodName="Manzana" prodId="fruit00002" price="350" description={description2} qtySelected="0"/>
-                    <CardComponent prodName="Pera" prodId="fruit00003" price="150" description={description3} qtySelected="5"/>
-                    <CardComponent prodName="Banana" prodId="fruit00004" price="240" description={description4} qtySelected="0" />
+                    <CardComponent prodName="Naranja" prodId="fruit00001" price="250" description={description1} />
+                    <CardComponent prodName="Manzana" prodId="fruit00002" price="350" description={description2} />
+                    <CardComponent prodName="Pera" prodId="fruit00003" price="150" description={description3} />
+                    <CardComponent prodName="Banana" prodId="fruit00004" price="240" description={description4} />
                 </div >
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
-                    <CardComponent prodName="Frutilla Camarosa" prodId="fruit00005" price="550" description={description5} qtySelected="1"/>
-                    <CardComponent prodName="Berenjena Negra" prodId="veg00001" price="150" description={description6} qtySelected="0"/>
-                    <CardComponent prodName="Brócoli" prodId="veg00002" price="250" description={description7} qtySelected="0"/>
-                    <CardComponent prodName="Choclo" prodId="veg00003" price="340" description={description8} qtySelected="0"/>
+                    <CardComponent prodName="Frutilla Camarosa" prodId="fruit00005" price="550" description={description5} />
+                    <CardComponent prodName="Berenjena Negra" prodId="veg00001" price="150" description={description6} />
+                    <CardComponent prodName="Brócoli" prodId="veg00002" price="250" description={description7} />
+                    <CardComponent prodName="Choclo" prodId="veg00003" price="340" description={description8} />
                 </div >
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
-                    <CardComponent prodName="Almendra" prodId="nuts00001" price="750" description={description9} qtySelected="0"/>
-                    <CardComponent prodName="Castaña de Cajú" prodId="nuts00002" price="650" description={description10} qtySelected="0"/>
-                    <CardComponent prodName="Maní Pelado Salado" prodId="nuts00003" price="490" description={description11} qtySelected="0"/>
-                    <CardComponent prodName="Canela" prodId="spices00001" price="98" description={description12} qtySelected="0"/>
+                    <CardComponent prodName="Almendra" prodId="nuts00001" price="750" description={description9} />
+                    <CardComponent prodName="Castaña de Cajú" prodId="nuts00002" price="650" description={description10} />
+                    <CardComponent prodName="Maní Pelado Salado" prodId="nuts00003" price="490" description={description11} />
+                    <CardComponent prodName="Canela" prodId="spices00001" price="98" description={description12} />
                 </div >
             </Container>
             
