@@ -25,22 +25,22 @@ const ItemListContainer = ({greeting}) => {
             <p className="h4 my-5">{greeting}</p> 
             <Container id="cards" className="py-5 my-5">
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
-                    <CardComponent prodName="Naranja" prodId="fruit00001" price="250" description={description1} />
-                    <CardComponent prodName="Manzana" prodId="fruit00002" price="350" description={description2} />
-                    <CardComponent prodName="Pera" prodId="fruit00003" price="150" description={description3} />
-                    <CardComponent prodName="Banana" prodId="fruit00004" price="240" description={description4} />
+                    <CardComponent prodName="Naranja" prodId="fruit00001" price="250" description={description1} stock={5} initial={0} />
+                    <CardComponent prodName="Manzana" prodId="fruit00002" price="350" description={description2} stock={5} initial={0} />
+                    <CardComponent prodName="Pera" prodId="fruit00003" price="150" description={description3} stock={5} initial={0} />
+                    <CardComponent prodName="Banana" prodId="fruit00004" price="240" description={description4} stock={5} initial={0} />
                 </div >
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
-                    <CardComponent prodName="Frutilla Camarosa" prodId="fruit00005" price="550" description={description5} />
-                    <CardComponent prodName="Berenjena Negra" prodId="veg00001" price="150" description={description6} />
-                    <CardComponent prodName="Brócoli" prodId="veg00002" price="250" description={description7} />
-                    <CardComponent prodName="Choclo" prodId="veg00003" price="340" description={description8} />
+                    <CardComponent prodName="Frutilla Camarosa" prodId="fruit00005" price="550" description={description5} stock={5} initial={0} />
+                    <CardComponent prodName="Berenjena Negra" prodId="veg00001" price="150" description={description6} stock={5} initial={0}  />
+                    <CardComponent prodName="Brócoli" prodId="veg00002" price="250" description={description7} stock={5} initial={0} />
+                    <CardComponent prodName="Choclo" prodId="veg00003" price="340" description={description8} stock={5} initial={0} />
                 </div >
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
-                    <CardComponent prodName="Almendra" prodId="nuts00001" price="750" description={description9} />
-                    <CardComponent prodName="Castaña de Cajú" prodId="nuts00002" price="650" description={description10} />
-                    <CardComponent prodName="Maní Pelado Salado" prodId="nuts00003" price="490" description={description11} />
-                    <CardComponent prodName="Canela" prodId="spices00001" price="98" description={description12} />
+                    <CardComponent prodName="Almendra" prodId="nuts00001" price="750" description={description9} stock={5} initial={0} />
+                    <CardComponent prodName="Castaña de Cajú" prodId="nuts00002" price="650" description={description10} stock={5} initial={0} />
+                    <CardComponent prodName="Maní Pelado Salado" prodId="nuts00003" price="490" description={description11} stock={5} initial={0} />
+                    <CardComponent prodName="Canela" prodId="spices00001" price="98" description={description12} stock={5} initial={0} />
                 </div >
             </Container>
             

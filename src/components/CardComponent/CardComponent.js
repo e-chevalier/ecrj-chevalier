@@ -7,7 +7,17 @@ import Accordion from 'react-bootstrap/Accordion'
 
 import ItemCount from '../ItemCount/ItemCount'
 
-const CardComponent = ({prodName, prodId, price, description}) => {
+const CardComponent = ({prodName, prodId, price, description, stock, initial}) => {
+
+    const onAdd = (qty) => {
+        
+        if (qty <= stock && qty > 0) {
+            alert("Cantidad seleccionada de " + prodName + " es: " + qty + " Kg.");
+        } else {
+            console.log("Qty en OnAdd no cumple con los requisitos.");
+        }
+        
+    }
 
     return (
         <Col className="col py-4 px-4 px-lg-2 py-lg-3">
@@ -37,7 +47,7 @@ const CardComponent = ({prodName, prodId, price, description}) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <ItemCount prodId={prodId} />
+                        <ItemCount prodId={prodId} stock={stock} initial={initial} onAdd={onAdd}/>
                     </Card.Footer>
                 </Row>
 
