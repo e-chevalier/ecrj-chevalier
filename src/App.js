@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <ItemListContainer />
+      <ItemListContainer greeting="¡Buenos días! Que tenga una excelente compra."/>
     </div>
   );
 }

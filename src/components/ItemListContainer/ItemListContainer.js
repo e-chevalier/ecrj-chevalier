@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import CardComponent from '../CardComponent/CardComponent'
 
-const ItemListContainer = () => {
+const ItemListContainer = ({greeting}) => {
 
     const description1 = "Naranja de Ombligo, presentan unos gajos grandes y generosos en jugo, pero también en fibra insoluble, es decir carnosas, lo que las hace más aptas para naranja de mesa que para hacer zumos. También presentan la ventaja para este fin de que casi nunca tienen las incómodas pepitas que nos encontramos en otras variedades al morder.";
     const description2 = "Este tipo de manzana tiene una piel brillante a rayas o estrías rojas-anaranjadas sobre una base de color amarillenta.Se recomienda comer en crudo, pero también para cocer para hacer tartas y al horno.";
@@ -22,6 +22,7 @@ const ItemListContainer = () => {
     return (
 
         <div>
+            <p className="h4 my-5">{greeting}</p> 
             <Container id="cards" className="py-5 my-5">
                 <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
                     <CardComponent prodName="Naranja" prodId="fruit00001" price="250" description={description1} />
