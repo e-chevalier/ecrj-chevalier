@@ -7,7 +7,7 @@ import Accordion from 'react-bootstrap/Accordion'
 
 import ItemCount from '../ItemCount/ItemCount'
 
-const CardComponent = ({prodName, prodId, price, description, stock, initial}) => {
+const Item = ({prodName, prodId, price, description, stock, initial}) => {
 
     const onAdd = (qty) => {
         
@@ -57,4 +57,4 @@ const CardComponent = ({prodName, prodId, price, description, stock, initial}) =
     )
 }
 
-export default CardComponent
+export default Item
