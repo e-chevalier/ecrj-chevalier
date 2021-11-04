@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
@@ -27,31 +27,19 @@ const ItemCount = ({ prodId, stock, initial, onAdd }) => {
         onAdd(qtyCount);
     }
 
-    useEffect(() => {
-        document.getElementById("removeButton-" + prodId).addEventListener('click', substractToCounter);
-        document.getElementById("addButton-" + prodId).addEventListener('click', addToCounter);
-        document.getElementById("addToCart-" + prodId).addEventListener('click', addToCart);
-
-        return () => {
-            document.getElementById("removeButton-" + prodId).removeEventListener('click', substractToCounter);
-            document.getElementById("addButton-" + prodId).removeEventListener('click', addToCounter);
-            document.getElementById("addToCart-" + prodId).removeEventListener('click', addToCart);
-        }
-    });
-
     return (
         <>
             <ButtonGroup aria-label="ButtonGroupCard" className="align-items-center">
-                <Button id={"removeButton-" + prodId} size="sm" variant="outline-dark" className="rounded-circle border-0 m-2" disabled={qtyCount === 0}>
+                <Button onClick={substractToCounter} id={"removeButton-" + prodId} size="sm" variant="outline-dark" className="rounded-circle border-0 m-2" disabled={qtyCount === 0}>
                     <i className="bi bi-dash h4"></i>
                 </Button>
                 <span as={ButtonGroup} className="m-2 px-3 fs-6"> {qtyCount} Kg </span>
-                <Button id={"addButton-" + prodId} size="sm" variant="outline-dark" className="rounded-circle border-0 m-2" disabled={qtyCount === stock}>
+                <Button onClick={addToCounter} id={"addButton-" + prodId} size="sm" variant="outline-dark" className="rounded-circle border-0 m-2" disabled={qtyCount === stock}>
                     <i className="bi bi-plus h4"></i>
                 </Button>
             </ButtonGroup>
             <div className="d-grid gap-2">
-                <Button id={"addToCart-" + prodId} variant="outline-dark" size="sm" className="border-0 m-2" disabled={qtyCount === 0 || qtyCount > stock}>
+                <Button onClick={addToCart} id={"addToCart-" + prodId} variant="outline-dark" size="sm" className="border-0 m-2" disabled={qtyCount === 0 || qtyCount > stock}>
                     Agregar al carrito
                 </Button>
             </div>
