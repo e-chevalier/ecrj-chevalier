@@ -5,10 +5,12 @@ This project was made to practice React Js and develop an ecommerce following Co
 ## Used libraries 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-For the routing I used: 
+For the routing I used:
+
     "react-router-dom" version "^6.0.1"
 
 Quickly design and customize responsive mobile-first sites with Bootstrap:
+
     "react-bootstrap" version "^2.0.0-rc.1"
     "bootstrap" version "^5.1.1"
     "bootstrap-icons" version "^1.6.1"
