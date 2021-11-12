@@ -1,50 +1,75 @@
-import logo from "../../logo.svg";
+import { useState, useEffect } from 'react';
 import "../../App.css";
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
+import Loading from "../Loading/Loading";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import useFetch from "../../hooks/useFetch";
 
 
 const NavigationBar = () => {
+
+  const [products, loadingProducts] = useFetch();
+  const [kinds, setKinds] = useState([]);
+  const [loadingKinds, setLoadingKinds] = useState(true);
+
+  useEffect(() => {
+    if (!loadingProducts) {
+      const arrayTemp = [];
+      products.forEach(prod => { if (!(arrayTemp.includes(prod.kind))) { arrayTemp.push(prod.kind) } });
+      setKinds(arrayTemp);
+      setLoadingKinds(false);
+    }
+  }, [products, loadingProducts])
+
   return (
-    <header>
-      <Container fluid>
-        <Navbar bg="light" expand="lg">
-        
-          <Container fluid>
-            <Navbar.Brand href="#">
-              <img src={logo} alt="Mi Logo" width="60" height="60" />
-            </Navbar.Brand>
-            <Navbar.Text className="d-flex justify-content-between text-right order-lg-1 px-md-4">
-              <CartWidget qtyOnCart="9" />
-              <Navbar.Toggle className="border-0 mx-3" aria-controls="navbarScroll" />
-            </Navbar.Text>
+    loadingKinds ? <Loading />
+      :
+      <header>
+        <Container fluid>
+          <Navbar bg="light" expand="lg">
 
-            <Navbar.Collapse id="navbarScroll">
-              <Nav id="navbarNavContent" className="me-auto mb-2 mb-lg-0" style={{ maxHeight: '300px' }}  >
-                <Nav.Link href="#action1">Carnes</Nav.Link>
-                <Nav.Link href="#action2">Verduras</Nav.Link>
-                <Nav.Link href="#action3">Lacteos</Nav.Link>
-                <NavDropdown title="Frutas" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action4">Manzana</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Pera</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action6">
-                    Melón
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </Nav>
+            <Container fluid>
+              <Navbar.Brand as={Link} to={'/'}>
+                <img src="/assets/icons/logo_small.png" alt="Mi Logo" width="60" height="60" />
+              </Navbar.Brand>
 
-              <div className="d-flex flex-row align-items-center">
-                <div id="loginContainer"></div>
-              </div>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </Container>
-    </header>
+              <Navbar.Text className="d-flex justify-content-between text-right order-lg-1 px-md-4">
+                <Link to={'/cart'}>
+                  <CartWidget qtyOnCart="9" />
+                </Link>
+                <Navbar.Toggle className="border-0 mx-3" aria-controls="navbarScroll" />
+              </Navbar.Text>
+
+              <Navbar.Collapse id="navbarScroll">
+                <Nav id="navbarNavContent" className="me-auto mb-2 mb-lg-0" style={{ maxHeight: '300px' }}  >
+                  {
+                    kinds.map(kind =>
+                      <NavDropdown key={kind} title={kind} id={`navbarScrollingDropdown-${kind}`}>
+                        <NavDropdown.Item as={Link} to={`/category/${kind}`}>Todas las {kind}</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        {
+                          products
+                            .filter(prod => prod.kind === kind)
+                            .map(prod =>
+                                <NavDropdown.Item key={prod.id} as={Link} to={`/item/${prod.id}`}>{prod.name}</NavDropdown.Item>
+                            )
+                        }
+                      </NavDropdown>)
+                  }
+                </Nav>
+
+                <div className="d-flex flex-row align-items-center">
+                  <div id="loginContainer"></div>
+                </div>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
+        </Container>
+      </header>
   );
 };
 

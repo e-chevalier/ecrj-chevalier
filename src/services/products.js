@@ -49,7 +49,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Frutas",
-        "stock": 25 
+        "stock": 250 
     },
     {
         "id": "veg00001",
@@ -59,47 +59,47 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Verduras",
-        "stock": 57 
+        "stock": 570 
     },
     {
         "id": "veg00002",
         "name": "Brócoli",
-        "price": 80, 
+        "price": 174, 
         "description": "De color verde profundo e intenso, partiendo de un tallo firme y robusto hasta una particular e inconfundible forma irregular en su copa. El brócoli llega para regalarnos un suave pero distintivo sabor que oscila entre lo amargo y lo dulce.",
         "weight": 1,
         "discount": 20,
         "kind": "Verduras",
-        "stock": 92 
+        "stock": 920 
     },
     {
         "id": "veg00003",
         "name": "Choclo Unidad",
-        "price": 80, 
+        "price": 471, 
         "description": "Inconfundibles granos color amarillo oro. Crujientes por fuera pero suaves en su interior y, al morderlos, además nos inundan de todo su dulzor tan característico. El choclo es un vegetal tanto conocido como querido por todos.",
         "weight": 1,
         "discount": 20,
         "kind": "Verduras",
-        "stock": 33 
+        "stock": 330 
     },
     {
         "id": "nuts00001",
         "name": "Almendra",
-        "price": 2170, 
+        "price": 217, 
         "description": "Caprichosas, rebeldes y suavemente crujientes, de interior blanco cremoso y un sabor dulce peculiar. Las almendras son célebres frutos secos, conocidos por todo tipo de paladares y preparaciones.",
         "weight": 1,
         "discount": 20,
         "kind": "Frutos Secos",
-        "stock": 69 
+        "stock": 690 
     },
     {
         "id": "nuts00002",
         "name": "Castaña de Cajú",
-        "price": 1800, 
+        "price": 566, 
         "description": "Crujientes, gustosas y exquisitas para todo momento. Las castañas de cajú son un singular fruto seco que nos ofrecen una textura y sabor único. Sus usos son variados, podemos optar por consumirlas solas como un snack, combinada con otros frutos secos, o bien, utilizarla en diferentes preparaciones como panes, ensaladas, tortas o postres.",
         "weight": 1,
         "discount": 20,
         "kind": "Frutos Secos",
-        "stock": 80 
+        "stock": 800 
     },
     {
         "id": "nuts00003",
@@ -109,27 +109,57 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Frutos Secos",
-        "stock": 76 
+        "stock": 760 
     },
     {
         "id": "spices00001",
         "name": "Canela",
-        "price": 98, 
+        "price": 379, 
         "description": "La canela es una especia muy recomendada para mejorar los problemas de circulación y muy beneficiosa para las personas con diabetes, ya que ayuda a controlar los niveles de glucosa en sangre. Sobre su origen existen algunos documentos chinos del año 2800 a.C. que ya hablan de la Cinnamomum Zeylanicum. Esta es una palabra de origen griego que significa madera dulce y Zeeylanicum proviene del nombre donde se cultivaba, Ceilán.",
         "weight": 0.1,
         "discount": 20,
         "kind": "Hierbas y Especias",
-        "stock": 76 
+        "stock": 540
     },
     {
         "id": "spices00002",
         "name": "Albahaca",
-        "price": 68, 
+        "price": 152, 
         "description": "Dulce, fragante y aromática. El sabor de nuestra albahaca se asemeja a un ramo de flores con notas de menta y perfume. Una hierba que nos transmite toda la frescura del Mediterráneo y que no pasará desapercibida en nuestros platos.",
         "weight": 0.025,
         "discount": 20,
         "kind": "Hierbas y Especias",
-        "stock": 76 
+        "stock": 760 
+    },
+    {
+        "id": "spices00003",
+        "name": "Menta",
+        "price": 259, 
+        "description": "La menta es una hierba muy utilizada en la cocina oriental. Puede incluirse tanto en platos salados como dulces. Su aroma es fresco y agradable. Vuelve muy refrescante a cualquier plato que la componga.",
+        "weight": 0.025,
+        "discount": 20,
+        "kind": "Hierbas y Especias",
+        "stock": 550 
+    },
+    {
+        "id": "meat00001",
+        "name": "Milanesa de Pollo",
+        "price": 557, 
+        "description": "La menta es una hierba muy utilizada en la cocina oriental. Puede incluirse tanto en platos salados como dulces. Su aroma es fresco y agradable. Vuelve muy refrescante a cualquier plato que la componga.",
+        "weight": 0.025,
+        "discount": 20,
+        "kind": "Carnes y Pescados",
+        "stock": 579 
+    },
+    {
+        "id": "meat00002",
+        "name": "Salmón rojo",
+        "price": 2763, 
+        "description": "La menta es una hierba muy utilizada en la cocina oriental. Puede incluirse tanto en platos salados como dulces. Su aroma es fresco y agradable. Vuelve muy refrescante a cualquier plato que la componga.",
+        "weight": 0.025,
+        "discount": 20,
+        "kind": "Carnes y Pescados",
+        "stock": 579 
     }
 ];
 

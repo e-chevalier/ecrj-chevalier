@@ -1,19 +1,19 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import Loading from '../Loading/Loading';
 
-import Spinner from 'react-bootstrap/Spinner';
+import { useParams } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 const ItemDetailContainer = () => {
 
-    const [products, loading ] = useFetch('fruit00002');
+    const { id } = useParams();
+    const [products, loading] = useFetch(id);
 
     return (
         loading ?
-            <Spinner animation="grow" variant="secondary" role="status" className="my-5" >
-                <span className="visually-hidden">Loading...</span>
-            </Spinner>
+            <Loading />
             :
             <Container>
                 <ItemDetail product={products[0]} />
