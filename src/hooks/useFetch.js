@@ -16,6 +16,9 @@ const useFetch = (id = 0) => {
                 setLoading(false);
                 console.log('GetFetch Finalizada');
             });
+        return () => {
+            setLoading(true);
+        }
     }, [id]);
 
     return [products, loading]

@@ -144,8 +144,8 @@ const products =  [
     {
         "id": "meat00001",
         "name": "Milanesa de Pollo",
-        "price": 557, 
-        "description": "La menta es una hierba muy utilizada en la cocina oriental. Puede incluirse tanto en platos salados como dulces. Su aroma es fresco y agradable. Vuelve muy refrescante a cualquier plato que la componga.",
+        "price": 450, 
+        "description": "Filete fino de carne de pollo aderezada de especias y limón de forma exquisita, que le dan un toque característico y que consiste en pasar el filete por huevo batido y posteriormente sufren un rebozado en pan rallado. Cocinar con abundante aceite a gran temperatura.",
         "weight": 0.025,
         "discount": 20,
         "kind": "Carnes y Pescados",
@@ -154,8 +154,8 @@ const products =  [
     {
         "id": "meat00002",
         "name": "Salmón rojo",
-        "price": 2763, 
-        "description": "La menta es una hierba muy utilizada en la cocina oriental. Puede incluirse tanto en platos salados como dulces. Su aroma es fresco y agradable. Vuelve muy refrescante a cualquier plato que la componga.",
+        "price": 2700, 
+        "description": "El salmón rojo es la especie de salmón más importante en Alaska, aunque no la más abundante, por su sabor rico y textura firme. Su carne tiene más contenido de aceite, y considerado un pescado de muy alta calidad, mucho más que otras especies de salmón ",
         "weight": 0.025,
         "discount": 20,
         "kind": "Carnes y Pescados",

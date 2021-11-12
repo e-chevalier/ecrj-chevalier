@@ -23,6 +23,9 @@ const NavigationBar = () => {
       setKinds(arrayTemp);
       setLoadingKinds(false);
     }
+    return() => {
+      setLoadingKinds(true);
+    }
   }, [products, loadingProducts])
 
   return (
