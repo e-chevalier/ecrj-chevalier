@@ -8,7 +8,8 @@
             "weight": 1, 
             "discount": 0, 
             "kind": "Frutas",
-            "stock": 5 
+            "qty": 0,
+            "stock": 5
         },
         {
             "id": "fruit00002",
@@ -18,6 +19,7 @@
             "weight": 1,
             "discount": 10,
             "kind": "Frutas",
+            "qty": 0,
             "stock": 6 
         },
 
@@ -29,6 +31,7 @@
             "weight": 1,
             "discount": 5,
             "kind": "Frutas",
+            "qty": 0,
             "stock": 66 
         },
 
@@ -40,6 +43,7 @@
             "weight": 1,
             "discount": 15,
             "kind": "Frutas",
+            "qty": 0,
             "stock": 54 
         },
         {
@@ -50,6 +54,7 @@
             "weight": 1,
             "discount": 20,
             "kind": "Frutas",
+            "qty": 0,
             "stock": 25 
         },
         {
@@ -60,6 +65,7 @@
             "weight": 1,
             "discount": 20,
             "kind": "Verduras",
+            "qty": 0,
             "stock": 57 
         },
         {
@@ -70,6 +76,7 @@
             "weight": 1,
             "discount": 20,
             "kind": "Verduras",
+            "qty": 0,
             "stock": 92 
         },
         {
@@ -80,6 +87,7 @@
             "weight": 1,
             "discount": 20,
             "kind": "Verduras",
+            "qty": 0,
             "stock": 33 
         },
         {
@@ -90,6 +98,7 @@
             "weight": 1,
             "discount": 20,
             "kind": "Frutos Secos",
+            "qty": 0,
             "stock": 69 
         },
         {
@@ -100,6 +109,7 @@
             "weight": 1,
             "discount": 20,
             "kind": "Frutos Secos",
+            "qty": 0,
             "stock": 80 
         },
         {
@@ -110,6 +120,7 @@
             "weight": 1,
             "discount": 20,
             "kind": "Frutos Secos",
+            "qty": 0,
             "stock": 76 
         },
         {
@@ -120,6 +131,7 @@
             "weight": 0.1,
             "discount": 20,
             "kind": "Hierbas y Especias",
+            "qty": 0,
             "stock": 76 
         },
         {
@@ -130,6 +142,7 @@
             "weight": 0.025,
             "discount": 20,
             "kind": "Hierbas y Especias",
+            "qty": 0,
             "stock": 76 
         }
     ]

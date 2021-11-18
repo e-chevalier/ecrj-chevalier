@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import { useCartContext } from '../../context/CartContext';
 import { Link } from 'react-router-dom'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -8,17 +9,26 @@ import Button from 'react-bootstrap/Button'
 
 
 
+
 const ItemDetail = ({ product }) => {
 
     const [qtyToAdd, setQtyToAdd] = useState(0);
     const [wasClicked, setWasClicked] = useState(false);
+    const { cartList, addItem, removeItem, clear } = useCartContext();
+
+    console.log(cartList)
 
     const onAdd = (newValue) => {
         setWasClicked(true);
         setQtyToAdd(newValue);
+        addItem(product, newValue);
     }
 
-    console.log("QtyIs: " + qtyToAdd );
+    const remove = () => {
+        removeItem(product.id)
+    }
+
+    console.log("QtyIs: " + qtyToAdd);
 
     return (
         <Card className="my-5">
@@ -27,13 +37,16 @@ const ItemDetail = ({ product }) => {
                     <img id="img" className="card-img-top" src={"/assets/img/product/" + product.id + ".jpg"} alt={product.name} />
                 </Col>
                 <Col md={8} lg={{ span: 4 }}>
-                    <Card.Body>
+                    <Card.Body className="text-center">
                         <Card.Title className="fs-2">{product.name}</Card.Title>
                         <Card.Text>Precio por Kg  <span className="fw-bold fs-4">${product.price}</span></Card.Text>
                         <Card.Text className="my-5 text-start">{product.description}</Card.Text>
                         {wasClicked ?
-                        <Button as={Link} to={'/cart'} variant="success">Terminar Compra</Button>:
-                        <ItemCount prodId={product.id} stock={product.stock} initial={0} onAdd={onAdd} />}
+                            <Button as={Link} to={'/cart'} variant="success">Terminar Compra</Button> :
+                            <ItemCount prodId={product.id} stock={product.stock} initial={0} onAdd={onAdd} />}
+                        {/* TODO: REMOVE THIS BUTTONS - ONLY FOR CHECK FUNCTIONALITY */}
+                        <Button onClick={clear} variant="outline-dark" size="sm" className="border-0 m-2">Clear</Button>
+                        <Button onClick={remove} variant="outline-dark" size="sm" className="border-0 m-2">Remove</Button>
                     </Card.Body>
                 </Col>
             </Row>

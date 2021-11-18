@@ -8,18 +8,18 @@ const ItemCount = ({ prodId, stock, initial, onAdd }) => {
     const [qtyCount, setQtyCount] = useState(initial)
 
     const addToCounter = () => {
-        if ( qtyCount < stock ){
+        if (qtyCount < stock) {
             setQtyCount(qtyCount + 1);
         } else {
-            console.log("Se alcanzó el limite de unidades de compra de "+ prodId);
+            console.log("Se alcanzó el limite de unidades de compra de " + prodId);
         }
     }
 
     const substractToCounter = () => {
-        if(qtyCount > initial ) {
+        if (qtyCount > initial) {
             setQtyCount(qtyCount - 1);
         } else {
-            console.log("QtyCount es cero para "+ prodId);
+            console.log("QtyCount es cero para " + prodId);
         }
     }
 

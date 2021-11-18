@@ -7,7 +7,7 @@ const ItemList = ({products}) => {
         <>
            <div className="row justify-content-evenly row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-4">
                 {products.map( prod => 
-                    <Item key={prod.id} prodName={prod.name} prodId={prod.id} price={prod.price} description={prod.description} stock={prod.stock} initial={0}/>
+                    <Item key={prod.id} prod={prod} initial={0}/>
                 )}
             </div >  
         </>

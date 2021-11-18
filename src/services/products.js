@@ -7,6 +7,7 @@ const products =  [
         "weight": 1, 
         "discount": 0, 
         "kind": "Frutas",
+        "qty": 0,
         "stock": 5
     },
     {
@@ -17,6 +18,7 @@ const products =  [
         "weight": 1,
         "discount": 10,
         "kind": "Frutas",
+        "qty": 0,
         "stock": 6 
     },
 
@@ -28,6 +30,7 @@ const products =  [
         "weight": 1,
         "discount": 5,
         "kind": "Frutas",
+        "qty": 0,
         "stock": 66 
     },
 
@@ -39,6 +42,7 @@ const products =  [
         "weight": 1,
         "discount": 15,
         "kind": "Frutas",
+        "qty": 0,
         "stock": 54 
     },
     {
@@ -49,6 +53,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Frutas",
+        "qty": 0,
         "stock": 250 
     },
     {
@@ -59,6 +64,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Verduras",
+        "qty": 0,
         "stock": 570 
     },
     {
@@ -69,6 +75,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Verduras",
+        "qty": 0,
         "stock": 920 
     },
     {
@@ -79,6 +86,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Verduras",
+        "qty": 0,
         "stock": 330 
     },
     {
@@ -89,6 +97,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Frutos Secos",
+        "qty": 0,
         "stock": 690 
     },
     {
@@ -99,6 +108,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Frutos Secos",
+        "qty": 0,
         "stock": 800 
     },
     {
@@ -109,6 +119,7 @@ const products =  [
         "weight": 1,
         "discount": 20,
         "kind": "Frutos Secos",
+        "qty": 0,
         "stock": 760 
     },
     {
@@ -119,6 +130,7 @@ const products =  [
         "weight": 0.1,
         "discount": 20,
         "kind": "Hierbas y Especias",
+        "qty": 0,
         "stock": 540
     },
     {
@@ -129,6 +141,7 @@ const products =  [
         "weight": 0.025,
         "discount": 20,
         "kind": "Hierbas y Especias",
+        "qty": 0,
         "stock": 760 
     },
     {
@@ -139,6 +152,7 @@ const products =  [
         "weight": 0.025,
         "discount": 20,
         "kind": "Hierbas y Especias",
+        "qty": 0,
         "stock": 550 
     },
     {
@@ -149,6 +163,7 @@ const products =  [
         "weight": 0.025,
         "discount": 20,
         "kind": "Carnes y Pescados",
+        "qty": 0,
         "stock": 579 
     },
     {
@@ -159,6 +174,7 @@ const products =  [
         "weight": 0.025,
         "discount": 20,
         "kind": "Carnes y Pescados",
+        "qty": 0,
         "stock": 579 
     }
 ];
