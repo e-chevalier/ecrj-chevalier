@@ -12,23 +12,15 @@ import Button from 'react-bootstrap/Button'
 
 const ItemDetail = ({ product }) => {
 
-    const [qtyToAdd, setQtyToAdd] = useState(0);
     const [wasClicked, setWasClicked] = useState(false);
-    const { cartList, addItem, removeItem, clear } = useCartContext();
+    const { cartList, addItem} = useCartContext();
 
     console.log(cartList)
 
     const onAdd = (newValue) => {
         setWasClicked(true);
-        setQtyToAdd(newValue);
         addItem(product, newValue);
     }
-
-    const remove = () => {
-        removeItem(product.id)
-    }
-
-    console.log("QtyIs: " + qtyToAdd);
 
     return (
         <Card className="my-5">
@@ -44,9 +36,6 @@ const ItemDetail = ({ product }) => {
                         {wasClicked ?
                             <Button as={Link} to={'/cart'} variant="success">Terminar Compra</Button> :
                             <ItemCount prodId={product.id} stock={product.stock} initial={0} onAdd={onAdd} />}
-                        {/* TODO: REMOVE THIS BUTTONS - ONLY FOR CHECK FUNCTIONALITY */}
-                        <Button onClick={clear} variant="outline-dark" size="sm" className="border-0 m-2">Clear</Button>
-                        <Button onClick={remove} variant="outline-dark" size="sm" className="border-0 m-2">Remove</Button>
                     </Card.Body>
                 </Col>
             </Row>
