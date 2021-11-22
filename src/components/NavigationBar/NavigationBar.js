@@ -42,7 +42,7 @@ const NavigationBar = () => {
 
               <Navbar.Text className="d-flex justify-content-between text-right order-lg-1 px-md-4">
                 <Link to={'/cart'}>
-                  <CartWidget qtyOnCart="9" />
+                  <CartWidget/>
                 </Link>
                 <Navbar.Toggle className="border-0 mx-3" aria-controls="navbarScroll" />
               </Navbar.Text>
