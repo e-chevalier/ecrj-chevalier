@@ -22,7 +22,7 @@ function App() {
         <NavigationBar />
         <Routes>
           <Route exact path='/' element={<ItemListContainer greeting={greeting} />} />
-          <Route path='category/:id' element={<ItemListContainer greeting={greeting} />} />
+          <Route path='category/:kind' element={<ItemListContainer greeting={greeting} />} />
           <Route path='item/:id' element={<ItemDetailContainer />} />
           <Route path='cart' element={<Cart />} />
           <Route path="*" element={<main style={{ padding: "1rem" }}> <p>There's nothing here!</p> </main>} />

@@ -9,7 +9,7 @@ import Container from 'react-bootstrap/Container';
 const ItemDetailContainer = () => {
 
     const { id } = useParams();
-    const [products, loading] = useFetch(id);
+    const [products, loading] = useFetch(0, id);
 
 
     return (

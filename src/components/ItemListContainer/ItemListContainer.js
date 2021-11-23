@@ -7,9 +7,10 @@ import useFetch from '../../hooks/useFetch'
 
 const ItemListContainer = ({ greeting }) => {
 
-    const [products, loading] = useFetch();
-    const { id } = useParams();
-
+    const { kind } = useParams(); // id es kind
+    console.log(kind)
+    const [products, loading] = useFetch(kind, 0);
+    
     return (
 
         loading ?
@@ -19,13 +20,15 @@ const ItemListContainer = ({ greeting }) => {
                 <p className="h4 my-5 text-center">{greeting}</p>
                 <Container id="cards" className="py-5 my-5">
                     {
-                        <ItemList products={
-                            id ? products.filter(prod => prod.kind === id) :
-                                products} />
+                        <ItemList products={products} />
                     }
                 </Container>
             </div>
     )
 }
+
+//<ItemList products={
+  //  id ? products.filter(prod => prod.kind === id) :
+    //    products} />
 
 export default ItemListContainer
