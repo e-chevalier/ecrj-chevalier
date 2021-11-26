@@ -2,18 +2,12 @@ import getFirestore from  '../GetFiretore/getFirestore'
 
 const getFetch = (kind = 0, id = 0) => {
 
-    let bdQuery
+    const db = getFirestore().collection('products')
+    let bdQuery = db
 
-    if (id !== 0 ) {
-        bdQuery = getFirestore().collection('products').doc(id)
-    } else {
-        if (kind !== 0 ) {
-            bdQuery = getFirestore().collection('products').where('kind', '==', kind)
-        } else {
-            bdQuery = getFirestore().collection('products')
-        }
-    }
-
+    if (id !== 0 ) { bdQuery = db.doc(id) }
+    if (kind !== 0) { bdQuery = db.where('kind', '==', kind)}
+     
     return (
         bdQuery.get()
         .then( data => id !== 0 ? [{ id: data.id, ...data.data()}] : data.docs.map( prod =>({ id: prod.id, ...prod.data()}) ) )
