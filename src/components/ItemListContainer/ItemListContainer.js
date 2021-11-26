@@ -7,8 +7,7 @@ import useFetch from '../../hooks/useFetch'
 
 const ItemListContainer = ({ greeting }) => {
 
-    const { kind } = useParams(); // id es kind
-    console.log(kind)
+    const { kind } = useParams();
     const [products, loading] = useFetch(kind, 0);
     
     return (

@@ -13,13 +13,13 @@ const useFetch = (kind =0 ,id = 0) => {
             })
             .catch(err => console.log(err))
             .finally(() => {
-                console.log(products)
                 setLoading(false);
                 console.log('GetFetch Finalizada');
             });
         return () => {
             setLoading(true);
         }
+    // eslint-disable-next-line        
     }, [kind, id]);
 
     return [products, loading]

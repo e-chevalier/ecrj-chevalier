@@ -2,35 +2,24 @@ import getFirestore from  '../GetFiretore/getFirestore'
 
 const getFetch = (kind = 0, id = 0) => {
 
-    const bdQuery = getFirestore()
+    let bdQuery
 
-    
-    if ( id === 0 ) {
-        console.log("CASE WITHOUT ID")
-        if (kind === 0 ) {
-            return (
-                bdQuery.collection('products').get()
-                .then( data => data.docs.map( prod =>({ id: prod.id, ...prod.data()}) ))
-                .catch((err) => { console.log(err)})
-                .finally() 
-            )
-        } else {
-            return (
-                bdQuery.collection('products').where('kind', '==', kind).get()
-                .then( data => data.docs.map( prod =>({ id: prod.id, ...prod.data()}) ))
-                .catch((err) => { console.log(err)})
-                .finally() 
-            )
-        }
+    if (id !== 0 ) {
+        bdQuery = getFirestore().collection('products').doc(id)
     } else {
-        console.log("CASE WITH ID")
-        return (
-            bdQuery.collection('products').doc(id).get()
-            .then( prod => [{ id: prod.id, ...prod.data()}] )
-            .catch((err) => { console.log(err)})
-            .finally() 
-        )
+        if (kind !== 0 ) {
+            bdQuery = getFirestore().collection('products').where('kind', '==', kind)
+        } else {
+            bdQuery = getFirestore().collection('products')
+        }
     }
+
+    return (
+        bdQuery.get()
+        .then( data => id !== 0 ? [{ id: data.id, ...data.data()}] : data.docs.map( prod =>({ id: prod.id, ...prod.data()}) ) )
+        .catch((err) => { console.log(err)})
+        .finally() 
+    )
     
 }
 

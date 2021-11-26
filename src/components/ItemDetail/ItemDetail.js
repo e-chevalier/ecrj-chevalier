@@ -13,9 +13,7 @@ import Button from 'react-bootstrap/Button'
 const ItemDetail = ({ product }) => {
 
     const [wasClicked, setWasClicked] = useState(false);
-    const { cartList, addItem} = useCartContext();
-
-    console.log(cartList)
+    const { addItem} = useCartContext();
 
     const onAdd = (newValue) => {
         setWasClicked(true);
