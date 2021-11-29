@@ -1,4 +1,4 @@
-import getFirestore from '../GetFiretore/getFirestore'
+import getFirestore from '../GetFirestore/getFirestore'
 
 const getFetch = (kind = 0, id = 0) => {
 

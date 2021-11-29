@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import firebase from "firebase/app";
-import getFirestore from '../../services/GetFiretore/getFirestore'
+import getFirestore from '../../services/GetFirestore/getFirestore'
 import { useCartContext } from '../../context/CartContext'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
