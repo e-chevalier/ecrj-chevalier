@@ -64,7 +64,6 @@ const CartContextProvider = ({ children }) => {
      */
 
     const clear = () => {
-        // TODO: Iterate over cartList and restore the stock.
         console.log("Call clear()")
         setCartCounter(0)
         setCartList([])

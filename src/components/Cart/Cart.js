@@ -1,10 +1,11 @@
-import { useCartContext } from '../../context/CartContext';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import ListGroup from 'react-bootstrap/ListGroup';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import ListGroup from 'react-bootstrap/ListGroup'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Order from '../Order/Order'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
 
@@ -21,7 +22,6 @@ const Cart = () => {
             :
             <Container id="checkOutItems">
                 <ListGroup as="ul" className="list-group-flush my-5 py-2 d-flex">
-                    {/* <ul className="list-group list-group-flush my-5 py-2 d-flex "> */}
                     <ListGroup.Item>
                         <Row className="g-0 mb-3 align-items-center">
                             <Col xs={5} className="text-center h5"> Producto </Col>
@@ -80,8 +80,8 @@ const Cart = () => {
                             <Col xs={2} id="checkOutTotal" className="h5">${subTotal + 300}</Col>
                         </Row>
                     </ListGroup.Item>
-                    <ListGroup.Item id="checkoutButton" className="list-group-item-action list-group-item-success disabled text-center h4">
-                        INICIAR PAGO
+                    <ListGroup.Item id="checkoutButton" className="list-group-item-action text-center h4">
+                        <Order/>
                     </ListGroup.Item>
                 </ListGroup>
             </Container>

@@ -7,9 +7,6 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 
-
-
-
 const ItemDetail = ({ product }) => {
 
     const [wasClicked, setWasClicked] = useState(false);

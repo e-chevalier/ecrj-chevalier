@@ -26,8 +26,4 @@ const ItemListContainer = ({ greeting }) => {
     )
 }
 
-//<ItemList products={
-  //  id ? products.filter(prod => prod.kind === id) :
-    //    products} />
-
 export default ItemListContainer
