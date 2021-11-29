@@ -20,7 +20,7 @@ const NavigationBar = () => {
     if (!loadingProducts) {
       const arrayTemp = [];
       products.forEach(prod => { if (!(arrayTemp.includes(prod.kind))) { arrayTemp.push(prod.kind) } });
-      setKinds(arrayTemp);
+      setKinds(arrayTemp.sort());
       setLoadingKinds(false);
     }
     return() => {
@@ -57,6 +57,7 @@ const NavigationBar = () => {
                         {
                           products
                             .filter(prod => prod.kind === kind)
+                            .sort((a, b) => a.name.localeCompare(b.name))
                             .map(prod =>
                                 <NavDropdown.Item key={prod.id} as={Link} to={`/item/${prod.id}`}>{prod.name}</NavDropdown.Item>
                             )
