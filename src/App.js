@@ -10,6 +10,7 @@ import CartContextProvider from './context/CartContext';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import OrderListContainer from './components/OrderListContainer/OrderListContainer';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='category/:kind' element={<ItemListContainer greeting={greeting} />} />
           <Route path='item/:id' element={<ItemDetailContainer />} />
           <Route path='cart' element={<Cart />} />
+          <Route path='orders/:userId' element={<OrderListContainer />} />
           <Route path="*" element={<main style={{ padding: "1rem" }}> <p>There's nothing here!</p> </main>} />
         </Routes>
       </BrowserRouter>
