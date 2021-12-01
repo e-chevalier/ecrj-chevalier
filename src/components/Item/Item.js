@@ -9,11 +9,17 @@ import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ prod, initial }) => {
 
-    const { addItem } = useCartContext();
+    const { cartList, addItem, isInCart } = useCartContext();
+    const currentQty = isInCart(prod.id)? cartList.find(p => p.id === prod.id).qty: 0
+    const currentStock = prod.stock - currentQty
+
+    //console.log("CurrentQTY of "+ prod.id + " es: " + currentQty )
+    //console.log("CurrentSTOK of "+ prod.id + " es: " + currentStock )
+    //console.log(currentStock)
     
     const onAdd = (qty) => {
 
-        if (qty <= prod.stock && qty > 0) {
+        if (qty <= currentStock && qty > 0) {
             addItem(prod, qty)
             console.log("Cantidad seleccionada de " + prod.name + " es: " + qty + " Kg.");
         } else {
@@ -31,7 +37,7 @@ const Item = ({ prod, initial }) => {
 
                 <Row as={Link} to={`/item/${prod.id}`} className="h-100 g-0 pt-3 text-decoration-none text-body">
                     <Col xs={6}>
-                        <img id="img" className="card-img-top" src={"/assets/img/product/" + prod.id + ".jpg"} alt={prod.name} />
+                        <img id="img" className={currentStock > 0 ? 'card-img-top': 'card-img-top grayImageFilter'} src={"/assets/img/product/" + prod.id + ".jpg"} alt={prod.name} />
                     </Col>
                     <Col xs={6}>
                         <Card.Body>
@@ -50,7 +56,7 @@ const Item = ({ prod, initial }) => {
                                 </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <ItemCount prodId={prod.id} stock={prod.stock} initial={initial} onAdd={onAdd} />
+                        <ItemCount prodId={prod.id} stock={currentStock} initial={initial} onAdd={onAdd} />
                     </Card.Footer>
                 </Row>
             </Card>

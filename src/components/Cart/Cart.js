@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import OrderForm from '../OrderForm/OrderForm'
+import FormOrderContainer from '../FormOrderContainer/FormOrderContainer'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
@@ -81,7 +81,7 @@ const Cart = () => {
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item id="checkoutButton" className="list-group-item-action text-center h4">
-                        <OrderForm/>
+                        <FormOrderContainer/>
                     </ListGroup.Item>
                 </ListGroup>
             </Container>

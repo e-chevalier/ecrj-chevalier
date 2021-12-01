@@ -10,7 +10,9 @@ import Button from 'react-bootstrap/Button'
 const ItemDetail = ({ product }) => {
 
     const [wasClicked, setWasClicked] = useState(false);
-    const { addItem} = useCartContext();
+    const { cartList, addItem, isInCart } = useCartContext();
+    const currentQty = isInCart(product.id)? cartList.find(p => p.id === product.id).qty: 0
+    const currentStock = product.stock - currentQty
 
     const onAdd = (newValue) => {
         setWasClicked(true);
@@ -30,7 +32,7 @@ const ItemDetail = ({ product }) => {
                         <Card.Text className="my-5 text-start">{product.description}</Card.Text>
                         {wasClicked ?
                             <Button as={Link} to={'/cart'} variant="success">Terminar Compra</Button> :
-                            <ItemCount prodId={product.id} stock={product.stock} initial={0} onAdd={onAdd} />}
+                            <ItemCount prodId={product.id} stock={currentStock} initial={0} onAdd={onAdd} />}
                     </Card.Body>
                 </Col>
             </Row>

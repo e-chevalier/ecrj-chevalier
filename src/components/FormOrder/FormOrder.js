@@ -1,57 +1,8 @@
-import { useState } from 'react'
-import firebase from "firebase/app";
-import getFirestore from '../../services/GetFirestore/getFirestore'
-import { useCartContext } from '../../context/CartContext'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { useNavigate } from 'react-router-dom';
 
-const OrderForm = () => {
-
-    const { cartList, subTotal } = useCartContext()
-    const [show, setShow] = useState(false)
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
-    const [idOrder, setIdOrder] = useState('')
-    let navigate = useNavigate();
-
-    const handleClose = () => setShow(false)
-    const handleShow = () => setShow(true)
-
-    /**
-     * Function to generate the order and insert on collection.
-     */
-    const generateOrder = (e) => {
-        e.preventDefault()
-        const orderCollection = getFirestore().collection('orders')
-
-        const buyer = { name, phone, email }
-        let order = {}
-        order.buyer = buyer
-        order.items = cartList.map(prod => ({ id: prod.id, title: prod.name, price: prod.price, qty: prod.qty }))
-        order.date = firebase.firestore.Timestamp.fromDate(new Date())
-        order.total = subTotal
-
-        console.log(order)
-
-        
-        orderCollection.add(order)
-            .then(data => {
-                setIdOrder(data.id)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-            .finally( () => {
-                    console.log(idOrder)
-                    handleClose()
-                    navigate('/orders/'+email)
-                }
-            )
-
-    }
+const FormOrder = ({show, setName, setEmail, setPhone, handleShow, handleClose, updateStock}) => {
 
     return (
         <>
@@ -85,16 +36,16 @@ const OrderForm = () => {
                         <Button variant="secondary" onClick={handleClose}>
                             Cancelar
                         </Button>
-                        <Button variant="primary" type="submit" onClick={generateOrder}>
+                        <Button variant="primary" type="submit" onClick={updateStock}>
                             GENERAR
                         </Button>
                     </Modal.Footer>
                 </Form>
             </Modal>
-
-
         </>
     )
 }
 
-export default OrderForm
+export default FormOrder
+
+

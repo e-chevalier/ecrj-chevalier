@@ -9,7 +9,6 @@ const OrderListContainer = () => {
 
     const { userId } = useParams();
     const [orders, loading] = useOrder(userId);
-    console.log(orders)
 
     return (
         loading ?
@@ -17,7 +16,7 @@ const OrderListContainer = () => {
         :
         <div>
             <p className="h4 my-5 text-center">Ordenes de compra de <span className="text-capitalize"> {orders[0].buyer.name} </span></p>
-            <Container id="cards" className="py-5 my-5">
+            <Container id="orders" className="py-5 my-5">
                 {
                     <OrderList orders={orders} />
                 }

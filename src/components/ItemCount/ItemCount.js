@@ -34,7 +34,7 @@ const ItemCount = ({ prodId, stock, initial, onAdd }) => {
                     <i className="bi bi-dash h4"></i>
                 </Button>
                 <span as={ButtonGroup} className="m-2 px-3 fs-6"> {qtyCount} Kg </span>
-                <Button onClick={addToCounter} id={"addButton-" + prodId} size="sm" variant="outline-dark" className="rounded-circle border-0 m-2" disabled={qtyCount === stock}>
+                <Button onClick={addToCounter} id={"addButton-" + prodId} size="sm" variant="outline-dark" className="rounded-circle border-0 m-2" disabled={qtyCount >= stock}>
                     <i className="bi bi-plus h4"></i>
                 </Button>
             </ButtonGroup>
