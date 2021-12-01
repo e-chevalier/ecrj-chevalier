@@ -1,14 +1,14 @@
 import Table from "react-bootstrap/Table"
 
 const Order = ({id, items, total, date}) => {
-
-    console.log(date)
-
+        
     return (
-        <div>
-            <Table size="sm" className="caption-top">
-                <caption> Fecha: </caption>
-                <caption>ID de la orden de compra :  <span className="font-weight fs-5">{id}</span></caption>
+        <div className="m-3 p-3">
+            <p> Compra: <span className="text-success font-weight fs-6">{id}</span> - {date.toDate().toLocaleString()}hs</p>
+            <Table borderless size="sm" className="caption-top">
+                {/*<caption> 
+                    <p> Fecha: {date.toDate().toLocaleString()}hs  - Compra:<span className="font-weight fs-5">{id}</span></p>
+                </caption> */}
                 <thead className="table-info">
                     <tr>
                         <th className="col-1">#</th>
@@ -19,7 +19,7 @@ const Order = ({id, items, total, date}) => {
                 </thead>
                 <tbody>
                 {   
-                    items.map( (item, index) => 
+                    items.sort((a, b) => a.title.localeCompare(b.title)).map( (item, index) => 
                         <tr key={item.id}>
                             <td>{index+1}</td>
                             <td>{item.title}</td>
@@ -30,7 +30,7 @@ const Order = ({id, items, total, date}) => {
                 }
                 </tbody>
                 <tfoot>
-                    <tr className="font-weight fs-5">
+                    <tr className="fw-bolder">
                         <td></td>
                         <td></td>
                         <td>TOTAL</td>

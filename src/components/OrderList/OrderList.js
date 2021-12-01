@@ -5,11 +5,11 @@ const OrderList = memo(
     ({ orders }) => {
         return (
             <>
-                <div className="">
-                    {orders.sort((a,b) => a.date - b.date).map(order =>
+                <div>
+                    {orders.sort((a,b) => b.date.seconds - a.date.seconds).map(order =>
                         <Order key={order.id} id={order.id} items={order.items} total={order.total} date={order.date}  />
                     )}
-                </div >
+                </div>
             </>
         )
     }
