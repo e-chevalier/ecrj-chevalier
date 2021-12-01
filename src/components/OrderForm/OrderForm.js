@@ -5,6 +5,7 @@ import { useCartContext } from '../../context/CartContext'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import { useNavigate } from 'react-router-dom';
 
 const OrderForm = () => {
 
@@ -14,6 +15,7 @@ const OrderForm = () => {
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [idOrder, setIdOrder] = useState('')
+    let navigate = useNavigate();
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -28,7 +30,7 @@ const OrderForm = () => {
         const buyer = { name, phone, email }
         let order = {}
         order.buyer = buyer
-        order.items = cartList.map(prod => ({ id: prod.id, title: prod.name, price: prod.price }))
+        order.items = cartList.map(prod => ({ id: prod.id, title: prod.name, price: prod.price, qty: prod.qty }))
         order.date = firebase.firestore.Timestamp.fromDate(new Date())
         order.total = subTotal
 
@@ -43,10 +45,12 @@ const OrderForm = () => {
                 console.log(err)
             })
             .finally( () => {
-                handleClose()
-                console.log(idOrder)
+                    console.log(idOrder)
+                    handleClose()
+                    navigate('/orders/'+email)
                 }
             )
+
     }
 
     return (
