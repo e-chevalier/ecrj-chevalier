@@ -4,7 +4,6 @@ import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch'
 
-
 const ItemListContainer = ({ greeting }) => {
 
     const { kind } = useParams();
@@ -18,9 +17,7 @@ const ItemListContainer = ({ greeting }) => {
             <div>
                 <p className="h4 my-5 text-center">{greeting}</p>
                 <Container id="cards" className="py-5 my-5">
-                    {
-                        <ItemList products={products} />
-                    }
+                    <ItemList products={products} />
                 </Container>
             </div>
     )

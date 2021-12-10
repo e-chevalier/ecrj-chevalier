@@ -18,9 +18,7 @@ const OrderListContainer = () => {
             <div>
                 <p className="h4 my-5 text-center">Ordenes de compra de <span className="text-capitalize"> {orders[0].buyer.name} </span></p>
                 <Container id="orders" className="py-5 my-5">
-                    {
-                        <OrderList orders={orders} />
-                    }
+                    <OrderList orders={orders} />
                 </Container>
             </div> :
             <div> 

@@ -8,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import useFetch from '../../hooks/useFetch';
+import SearchOrder from '../SearchOrder/SearchOrder';
 
 const NavigationBar = () => {
 
@@ -64,10 +65,7 @@ const NavigationBar = () => {
                       </NavDropdown>)
                   }
                 </Nav>
-
-                <div className="d-flex flex-row align-items-center">
-                  <div id="loginContainer"></div>
-                </div>
+                <SearchOrder />
               </Navbar.Collapse>
             </Container>
           </Navbar>

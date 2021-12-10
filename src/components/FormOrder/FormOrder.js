@@ -13,7 +13,7 @@ const FormOrder = ({show, validated, setName, setEmail, setEmailConfirm, setPhon
             <Modal show={show} onHide={handleClose}>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Generar Orden de Compra</Modal.Title>
                     </Modal.Header>
 
                     <Modal.Body>

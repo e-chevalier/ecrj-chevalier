@@ -27,7 +27,7 @@ function App() {
           <Route path='item/:id' element={<ItemDetailContainer />} />
           <Route path='cart' element={<Cart />} />
           <Route path='orders/:userId' element={<OrderListContainer />} />
-          <Route path="*" element={<main style={{ padding: "1rem" }}> <p>There's nothing here!</p> </main>} />
+          <Route path="*" element={<main className="text-center my-5 py-5"> <p>No hay nada aquí!</p> </main>} />
         </Routes>
       </BrowserRouter>
     </CartContextProvider>
