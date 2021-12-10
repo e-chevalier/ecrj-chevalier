@@ -8,21 +8,23 @@ import FormOrder from '../FormOrder/FormOrder';
 const FormOrderContainer = () => {
 
     const { cartList, subTotal, clear } = useCartContext()
+
     const [show, setShow] = useState(false)
+    const [validated, setValidated] = useState(false);
     const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('email1')
+    const [emailConfirm, setEmailConfirm] = useState('email2')
     const [phone, setPhone] = useState('')
     let navigate = useNavigate();
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
 
-
     /**
      * Function to generate the order and insert on orders collection.
      */
     const addOrderToCollection = () => {
-        
+
         const orderCollection = getFirestore().collection('orders')
 
         const buyer = { name, phone, email }
@@ -31,9 +33,11 @@ const FormOrderContainer = () => {
         order.items = cartList.map(prod => ({ id: prod.id, title: prod.name, price: prod.price, qty: prod.qty }))
         order.date = firebase.firestore.Timestamp.fromDate(new Date())
         order.total = subTotal
-        
+
         orderCollection.add(order)
-            .then()
+            .then((data) => {
+                alert("EL ID DE TU ORDEN DE COMPRA ES: " + data.id)
+            })
             .catch((err) => {
                 console.log(err)
             })
@@ -46,16 +50,16 @@ const FormOrderContainer = () => {
         const db = getFirestore()
         const itemsToUpdate = db.collection('products')
             .where(firebase.firestore.FieldPath.documentId(), 'in', cartList.map(prod => prod.id))
-        
+
         const query = await itemsToUpdate.get()
         const batch = db.batch()
 
         const outOfStock = []
-        query.docs.forEach((doc, idx ) => {
-            if(doc.data().stock >= cartList.find(prod => prod.id === doc.id).qty) {
+        query.docs.forEach((doc, idx) => {
+            if (doc.data().stock >= cartList.find(prod => prod.id === doc.id).qty) {
                 batch.update(doc.ref, { stock: doc.data().stock - cartList[idx].qty })
             } else { // NOT ENOUGH STOCK
-                outOfStock.push({...doc.data(), id: doc.id})
+                outOfStock.push({ ...doc.data(), id: doc.id })
             }
         })
 
@@ -63,12 +67,12 @@ const FormOrderContainer = () => {
             await batch.commit()
                 .then()
                 .catch(err => console.log(err))
-                .finally( () => {
+                .finally(() => {
                     addOrderToCollection()
                     handleClose()
-                    navigate('/orders/'+email)
+                    navigate('/orders/' + email)
                     clear()
-                    }
+                }
                 )
 
         } else {
@@ -80,16 +84,34 @@ const FormOrderContainer = () => {
     }
 
 
+    const handleSubmit = (event) => {
+
+        event.preventDefault();
+        event.stopPropagation();
+        const form = event.currentTarget;
+
+        if (form.checkValidity() === true && email === emailConfirm) {
+            updateStock(event);
+        }
+
+        if (email !== emailConfirm) { alert("LOS EMAILS NO SON IGUALES") }
+
+        setValidated(true);
+    }
+
+
     let commonProps = {
         show: show,
+        validated: validated,
         setName: setName,
         setEmail: setEmail,
+        setEmailConfirm: setEmailConfirm,
         setPhone: setPhone,
         handleShow: handleShow,
         handleClose: handleClose,
-        updateStock: updateStock
+        handleSubmit: handleSubmit
     }
-    
+
     return (
         <>
             <FormOrder {...commonProps} />

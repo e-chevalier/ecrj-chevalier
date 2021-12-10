@@ -9,7 +9,6 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import useFetch from '../../hooks/useFetch';
 
-
 const NavigationBar = () => {
 
   const [products, loadingProducts] = useFetch();
@@ -23,7 +22,7 @@ const NavigationBar = () => {
       setKinds(arrayTemp.sort());
       setLoadingKinds(false);
     }
-    return() => {
+    return () => {
       setLoadingKinds(true);
     }
   }, [products, loadingProducts])
@@ -42,7 +41,7 @@ const NavigationBar = () => {
 
               <Navbar.Text className="d-flex justify-content-between text-right order-lg-1 px-md-4">
                 <Link to={'/cart'}>
-                  <CartWidget/>
+                  <CartWidget />
                 </Link>
                 <Navbar.Toggle className="border-0 mx-3" aria-controls="navbarScroll" />
               </Navbar.Text>
@@ -59,7 +58,7 @@ const NavigationBar = () => {
                             .filter(prod => prod.kind === kind)
                             .sort((a, b) => a.name.localeCompare(b.name))
                             .map(prod =>
-                                <NavDropdown.Item key={prod.id} as={Link} to={`/item/${prod.id}`}>{prod.name}</NavDropdown.Item>
+                              <NavDropdown.Item key={prod.id} as={Link} to={`/item/${prod.id}`}>{prod.name}</NavDropdown.Item>
                             )
                         }
                       </NavDropdown>)
