@@ -67,6 +67,7 @@ const CartContextProvider = ({ children }) => {
         console.log("Call clear()")
         setCartCounter(0)
         setCartList([])
+        setSubTotal(0)
     }
 
     return (

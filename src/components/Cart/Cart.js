@@ -64,20 +64,8 @@ const Cart = () => {
                         <Row className="g-0">
                             <Col xs={6} className="text-center h6"></Col>
                             <Col xs={1} className="h6"></Col>
-                            <Col xs={3} className="h6"> Sub Total</Col>
-                            <Col xs={2} id="checkOutSubtotal" className="h6">${subTotal}</Col>
-                        </Row>
-                        <Row className="g-0">
-                            <Col xs={6} className="text-center h6"></Col>
-                            <Col xs={1} className="h6"></Col>
-                            <Col xs={3} className="h6"> Envio</Col>
-                            <Col xs={2} id="checkOutEnvio" className="h6"> $300</Col>
-                        </Row>
-                        <Row className="g-0">
-                            <Col xs={6} className="text-center h6"></Col>
-                            <Col xs={1} className="h6"></Col>
                             <Col xs={3} className="h6 fw-bold"> TOTAL</Col>
-                            <Col xs={2} id="checkOutTotal" className="h6 fw-bold">${subTotal + 300}</Col>
+                            <Col xs={2} id="checkOutTotal" className="h6 fw-bold">${subTotal}</Col>
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item id="checkoutButton" className="list-group-item-action text-center h4">

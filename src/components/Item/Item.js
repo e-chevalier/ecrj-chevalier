@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
-import Accordion from 'react-bootstrap/Accordion'
-
 import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ prod, initial }) => {
@@ -12,20 +10,12 @@ const Item = ({ prod, initial }) => {
     const { cartList, addItem, isInCart } = useCartContext();
     const currentQty = isInCart(prod.id)? cartList.find(p => p.id === prod.id).qty: 0
     const currentStock = prod.stock - currentQty
-
-    //console.log("CurrentQTY of "+ prod.id + " es: " + currentQty )
-    //console.log("CurrentSTOK of "+ prod.id + " es: " + currentStock )
-    //console.log(currentStock)
     
     const onAdd = (qty) => {
 
         if (qty <= currentStock && qty > 0) {
             addItem(prod, qty)
-            console.log("Cantidad seleccionada de " + prod.name + " es: " + qty + " Kg.");
-        } else {
-            console.log("Qty en OnAdd no cumple con los requisitos.");
-        }
-
+        } 
     }
 
     return (
@@ -48,14 +38,6 @@ const Item = ({ prod, initial }) => {
                 </Row>
                 <Row className="g-0">
                     <Card.Footer className="text-center">
-                        <Accordion flush>
-                            <Accordion.Item eventKey="0">
-                                <Accordion.Header>Más información</Accordion.Header>
-                                <Accordion.Body>
-                                    {prod.description}
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
                         <ItemCount prodId={prod.id} stock={currentStock} initial={initial} onAdd={onAdd} />
                     </Card.Footer>
                 </Row>

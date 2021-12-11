@@ -4,11 +4,8 @@ const Order = ({id, items, total, date}) => {
         
     return (
         <div className="m-3 p-3">
-            <p> Compra: <span className="text-success font-weight fs-6">{id}</span> - {date.toDate().toLocaleString()}hs</p>
+            <p> Orden ID: <span className="text-success font-weight fs-6">{id}</span> - {date.toDate().toLocaleString()}hs</p>
             <Table borderless size="sm" className="caption-top">
-                {/*<caption> 
-                    <p> Fecha: {date.toDate().toLocaleString()}hs  - Compra:<span className="font-weight fs-5">{id}</span></p>
-                </caption> */}
                 <thead className="table-info">
                     <tr>
                         <th className="col-1">#</th>

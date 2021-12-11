@@ -14,7 +14,6 @@ const useOrder = (userId='') => {
             .catch(err => console.log(err))
             .finally(() => {
                 setLoading(false);
-                console.log('GetOrders Finalizada');
             });
         return () => {
             setLoading(true);

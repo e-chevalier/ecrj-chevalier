@@ -6,7 +6,6 @@ const CartWidget = () => {
     const {cartCounter} = useCartContext()    
 
     return (
-
         <Button variant="outline-dark" className="position-relative">
             <i className="bi bi-cart h3"></i>
             <span id="cartCounter"

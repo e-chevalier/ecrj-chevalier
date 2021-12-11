@@ -14,7 +14,6 @@ const useFetch = (kind =0 ,id = 0) => {
             .catch(err => console.log(err))
             .finally(() => {
                 setLoading(false);
-                console.log('GetFetch Finalizada');
             });
         return () => {
             setLoading(true);

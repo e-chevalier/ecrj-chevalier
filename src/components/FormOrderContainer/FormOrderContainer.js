@@ -32,6 +32,7 @@ const FormOrderContainer = () => {
         order.buyer = buyer
         order.items = cartList.map(prod => ({ id: prod.id, title: prod.name, price: prod.price, qty: prod.qty }))
         order.date = firebase.firestore.Timestamp.fromDate(new Date())
+        order.state = 'generated'
         order.total = subTotal
 
         orderCollection.add(order)
@@ -76,7 +77,6 @@ const FormOrderContainer = () => {
                 )
 
         } else {
-            console.log(outOfStock)
             alert("NO HAY STOCK DE " + outOfStock.map(prod => (prod.name).toUpperCase()))
             handleClose()
             navigate('/')
