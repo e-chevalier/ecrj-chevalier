@@ -3,21 +3,37 @@
 This project was made to practice React Js and develop an ecommerce following Coder's guidelines. 
 
 ## Used libraries 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-For the routing I used:
 
-    "react-router-dom" version "^6.0.1"
+For the routing I used: 
 
-Quickly design and customize responsive mobile-first sites with Bootstrap:
+    "react-router-dom" version "^6.0.1" 
 
-    "react-bootstrap" version "^2.0.0-rc.1"
+Quickly design and customize responsive mobile-first sites with Bootstrap: 
+
+    "react-bootstrap" version "^2.0.0-rc.1" 
     "bootstrap" version "^5.1.1"
-    "bootstrap-icons" version "^1.6.1"
+    "bootstrap-icons" version "^1.6.1" 
 
-## Available Scripts
 
-In the project directory, you can run:
+FireStore, a flexible, scalable, cloud-based NoSQL database was used to store
+and synchronize data for both client and server-side development. 
+
+    "firebase": "^8.9.1"
+
+
+## Live Demo Netlify 
+
+Open the netlify link to try a live demo of the site.  https://determined-colden-1eb0e8.netlify.app/ 
+
+
+![Alt Text](https://media.giphy.com/media/qPbcP62kBy7EtpMvrT/giphy.gif) 
+
+
+## Available Scripts 
+
+In the project directory, you can run: 
 
 ### `npm start`
 
