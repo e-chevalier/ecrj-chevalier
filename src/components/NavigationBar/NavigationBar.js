@@ -48,7 +48,7 @@ const NavigationBar = () => {
               </Navbar.Text>
 
               <Navbar.Collapse id="navbarScroll">
-                <Nav id="navbarNavContent" className="me-auto mb-2 mb-lg-0" style={{ maxHeight: '300px' }}  >
+                <Nav id="navbarNavContent" className="me-auto mb-2 mb-lg-0" style={{ maxHeight: '400px' }}  >
                   {
                     kinds.map(kind =>
                       <NavDropdown key={kind} title={kind} id={`navbarScrollingDropdown-${kind}`}>
